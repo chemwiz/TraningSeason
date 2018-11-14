@@ -2,7 +2,7 @@
 public class Something {
 
 	public static void main(String[] args) {
-		System.out.println();
+		System.out.println("THIS IS AWEOSOME!");
 		// TODO Auto-generated method stub
 
 	}
