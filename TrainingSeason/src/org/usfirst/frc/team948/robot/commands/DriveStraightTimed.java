@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class DriveStraightTimed extends Command {
 
     public DriveStraightTimed() {
-        
+        System.out.println( "hi");
     }
 
     // Called just before this Command runs the first time
