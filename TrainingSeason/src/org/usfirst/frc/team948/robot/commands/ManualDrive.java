@@ -1,5 +1,6 @@
 package org.usfirst.frc.team948.robot.commands;
 
+import org.usfirst.frc.team948.robot.OI;
 import org.usfirst.frc.team948.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -7,11 +8,10 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DriveStraightTimed extends Command {
+public class ManualDrive extends Command {
 
-    public DriveStraightTimed() {
+    public ManualDrive() {
         requires(Robot.drive);
-        
     }
 
     // Called just before this Command runs the first time
@@ -20,7 +20,7 @@ public class DriveStraightTimed extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drive.drive(0.2, 0.2);
+    	Robot.drive.drive(OI.getLeftJoystickY(), OI.getRightJoystickY());
     }
 
     // Make this return true when this Command no longer needs to run execute()
