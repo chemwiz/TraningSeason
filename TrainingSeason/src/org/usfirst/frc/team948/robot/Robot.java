@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team948.robot;
 
+import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -22,8 +23,8 @@ import org.usfirst.frc.team948.robot.subsystems.ExampleSubsystem;
  * creating this project, you must also update the build.properties file in the
  * project.
  */
-public class Robot extends TimedRobot {
-	public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
+public class Robot extends IterativeRobot {
+	public static DriveteamSubsystem drive = new DriveteamSubsystem();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
@@ -36,8 +37,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		m_oi = new OI();
-		m_chooser.addDefault("Default Auto", new ExampleCommand());
-		// chooser.addObject("My Auto", new MyAutoCommand());
+		m_chooser.addDefault("Default Auto", new ManualDrive());
 		SmartDashboard.putData("Auto mode", m_chooser);
 	}
 
